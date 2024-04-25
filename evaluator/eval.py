@@ -65,7 +65,7 @@ class Eval:
     def __init__(self):
         self.args = set_up_parse()
         modelname = (self.args.config_file).split("/")[2].split(".")[0]
-        modelname = 'GIOU'
+        modelname = 'UOARCNN'
         cfg_OUTPUT_DIR = "../data/VOC-Detection/faster-rcnn/{}/random_seed_0".format(modelname)
 
         # load groundtruth

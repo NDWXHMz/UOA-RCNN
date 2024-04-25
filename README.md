@@ -1,4 +1,4 @@
-﻿# **UOA-RCNN : detecting anything with Unknown             Object Aware RCNN**
+﻿﻿# **UOA-RCNN : detecting anything with Unknown             Object Aware RCNN**
 
 
 
@@ -6,11 +6,9 @@
 
 # Abstract
 
-#TODO
+<div>Unknown Object Detection has received increasing attention due to its adaptability to open scenarios in the real world. Previous methods confused unknown objects with non-objects and made unreasonable selections for unknown predictions, leading to inaccurate unknown detection. Inspired from the known object detection, we propose a novel unknown object detection method, named Unknown Object Aware RCNN (UOA-RCNN), which addresses the above issues. Firstly, the Unknown Object Aware Module is proposed, which learns Universal Objectness Score (UOS) from known objects that can be generalized to unknown objects, significantly improving the discriminability between objects and non-objects. Subsequently, the *Known Object Probability* is introduced to optimize the identified unknown objects, further suppressing potential non objects. Finally, we design an unknown object mining scheme based on the UOS that can accurately locate unknown objects and remove redundant results during prediction. Experimental results show that our method achieves the best performance on the unknown object detection benchmark. </div>
 
 
-
-</div>
 
 # Requirements
 ```bash
@@ -58,19 +56,25 @@ The COCO dataset folder should have the following structure:
 
 # Training
 ```bash
-python train_net.py --dataset-dir VOC_DATASET_ROOT --num-gpus 2 --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --random-seed 0 --resume
+python train_net.py --dataset-dir VOC_DATASET_ROOT --num-gpus 2 --config-file VOC-Detection/faster-rcnn/UOARCNN.yaml --random-seed 0 --resume
 ```
 
 
 # Pretesting
 The function of this process is to obtain the threshold, which only uses part of the training data.
+
+pretrained model: TODO
+
 ```bash
 sh pretest.sh
 ```
 
 # Evaluation on the VOC
+
+
+
 ```bash
-python apply_net.py --dataset-dir VOC_DATASET_ROOT --test-dataset voc_custom_val  --config-file VOC-Detection/faster-rcnn/UnSniffer.yaml --inference-config Inference/standard_nms.yaml --random-seed 0 --image-corruption-level 0 --visualize 0
+python apply_net.py --dataset-dir VOC_DATASET_ROOT --test-dataset voc_custom_val  --config-file VOC-Detection/faster-rcnn/UOARCNN.yaml --inference-config Inference/standard_nms.yaml --random-seed 0 --image-corruption-level 0 --visualize 0
 ```
 
 # Evaluation on the COCO-OOD

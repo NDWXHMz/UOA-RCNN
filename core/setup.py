@@ -214,7 +214,7 @@ def setup_config(args, random_seed=None, is_testing=False, ood=False):
     cfg['OUTPUT_DIR'] = os.path.join(core.data_dir(),
                                      dataset_name,
                                      model_name,
-                                     'GIOU',
+                                     'UOARCNN',
                                      'random_seed_' + str(random_seed))
     if is_testing:
         if not os.path.isdir(cfg['OUTPUT_DIR']):
