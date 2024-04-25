@@ -1,4 +1,4 @@
-﻿﻿# **UOA-RCNN : detecting anything with Unknown             Object Aware RCNN**
+﻿# UOA-RCNN : detecting anything with Unknown Object Aware RCNN
 
 
 
